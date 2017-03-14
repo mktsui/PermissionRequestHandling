@@ -16,19 +16,31 @@ import java.util.List;
 
 public class Case_RVAdapter extends RecyclerView.Adapter<Case_RVAdapter.CaseViewHolder>{
 
-    public static class CaseViewHolder extends RecyclerView.ViewHolder{
+    private static CaseClickListener caseClickListener;
+
+    public static class CaseViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         CardView cv;
         TextView caseName;
         TextView caseId;
         ImageView caseImg;
 
-        CaseViewHolder(View itemView){
+        public CaseViewHolder(View itemView){
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv);
             caseName = (TextView)itemView.findViewById(R.id.case_name);
             caseId = (TextView)itemView.findViewById(R.id.case_id);
             caseImg = (ImageView)itemView.findViewById(R.id.case_img);
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v){
+            caseClickListener.onItemClick(getAdapterPosition(), v);
+        }
+    }
+
+    public void setOnItemClickListener(CaseClickListener caseClickListener){
+        this.caseClickListener = caseClickListener;
     }
 
     List<Case> cases;
@@ -59,5 +71,9 @@ public class Case_RVAdapter extends RecyclerView.Adapter<Case_RVAdapter.CaseView
     @Override
     public int getItemCount() {
         return cases.size();
+    }
+
+    public interface CaseClickListener{
+        public void onItemClick(int position, View v);
     }
 }
