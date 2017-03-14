@@ -7,11 +7,9 @@ package com.techops.mankitt.permission;
 public class Case {
     String name;
     String identifier;
-    int imgId;
 
-    Case(String name, String identifier, int imgId) {
+    Case(String name, String identifier) {
         this.name = name;
         this.identifier = identifier;
-        this.imgId = imgId;
     }
 }

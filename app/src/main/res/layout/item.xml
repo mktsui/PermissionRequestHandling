@@ -2,50 +2,42 @@
 <android.support.v7.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/case_cv"
     android:layout_gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="300dp"
+    android:layout_height="170dp"
+    android:layout_marginTop="16dp"
     android:layout_marginBottom="16dp"
-    android:id="@+id/cv"
     card_view:cardCornerRadius="4dp"
     card_view:cardElevation="2dp"
+    android:foreground="?android:attr/selectableItemBackground"
     >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:padding="16dp"
             >
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_alignParentTop="true"
-            android:scaleType="centerInside"
-            android:src="@drawable/sample_img"
-            android:id="@+id/case_img"
-            />
-
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/case_img"
             android:id="@+id/case_name"
-            android:maxLines="3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:maxLines="1"
             android:padding="8dp"
-            android:text="Hellllloooooo"
             android:textColor="#222"
             android:textStyle="bold"
             android:textSize="22dp"
             />
 
         <TextView
+            android:id="@+id/case_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/case_name"
-            android:id="@+id/case_id"
-            android:maxLines="3"
+            android:maxLines="5"
             android:padding="8dp"
-            android:text="more"
             android:textColor="#666"
             android:textSize="14dp"
             />
